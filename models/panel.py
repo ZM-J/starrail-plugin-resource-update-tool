@@ -12,7 +12,11 @@ class Panel:
         url = f'https://avocado.wiki/v1/info/{self.uid}?lang=cn'
         while True:
             res = requests.get(url)
-            self._panel_json = res.json()
+            try:
+                self._panel_json = res.json()
+            except requests.exceptions.JSONDecodeError:
+                time.sleep(0.5)
+                continue
             if 'msg' in self._panel_json:
                 time.sleep(0.5)
             else:
