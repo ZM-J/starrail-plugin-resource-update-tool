@@ -47,6 +47,7 @@ class Character:
             f'resources/meta-sr/character/{self.name}/imgs/cons-4.webp': f'resources/panel/resources/skill/{self.avatar_id}_rank4.png',
             f'resources/meta-sr/character/{self.name}/imgs/cons-6.webp': f'resources/panel/resources/skill/{self.avatar_id}_rank6.png',
             f'resources/meta-sr/character/{self.name}/imgs/talent-q.webp': f'resources/panel/resources/skill/{self.avatar_id}_ultimate.png',
+            f'resources/meta-sr/character/{self.name}/imgs/face.webp': f'resources/gatcha/images/char/{self.avatar_id}.png',
         }
         for miao_image_name, sr_image_name in miao2sr.items():
             from_image_name = os.path.join(MIAO_PLUGIN_DIR, miao_image_name)
@@ -55,7 +56,7 @@ class Character:
     
     def _update_character_resource(self):
         image2to_folder = {
-            'icon': 'resources/gatcha/images/char',
+            # 'icon': 'resources/gatcha/images/char',
             # '': 'resources/gachasimulation/resources/images/char_image'
             'mini_icon': 'resources/panel/resources/avatar',
             'art': 'resources/panel/resources/char_image',
